@@ -2,7 +2,12 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
-  getHello(): string {
-    return 'Hello World!';
+  getHello(userAgent?: string): { [x: string]: string } {
+    return {
+      salonKey: 'salonKey',
+      employeeKey: 'employeeKey',
+      customerKey: 'customerKey',
+      userAgent,
+    };
   }
 }
