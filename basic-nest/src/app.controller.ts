@@ -13,10 +13,14 @@ import { Response } from 'express';
 import { DonggyuDto } from './app.dto';
 import { AppService } from './app.service';
 import { UserAgent } from './middlewares/requestDecorator';
+import { SalonService } from './salon.service';
 
 @Controller('v1')
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(
+    private readonly appService: AppService,
+    private readonly salonService: SalonService,
+  ) {}
 
   @Get()
   @HttpCode(200)
